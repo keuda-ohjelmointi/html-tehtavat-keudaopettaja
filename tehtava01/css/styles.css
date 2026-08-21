@@ -3,3 +3,15 @@
   padding: 0;
   box-sizing: border-box;
 }
+nav ul{
+  display:flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 20px;
+}
+
+header, footer {
+  background-color: lightblue;
+}
+
+  
