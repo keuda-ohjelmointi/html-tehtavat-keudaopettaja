@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yhteydenottolomake</title>
+  </head>
+
+  <body>
+    <h1>Ota yhteyttä</h1>
+
+    <p>
+      Täytä alla oleva lomake, niin olemme sinuun yhteydessä. Tähdellä (*)
+      merkityt kentät ovat pakollisia.
+    </p>
+
+    <form action="#" method="post">
+      <!-- Henkilötiedot -->
+      <fieldset>
+        <legend>Henkilötiedot</legend>
+
+        <p>
+          <label for="nimi">Nimi *</label><br />
+          <input
+            type="text"
+            id="nimi"
+            name="nimi"
+            placeholder="Matti Meikäläinen"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="email">Sähköposti *</label><br />
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="matti@example.com"
+            required
+          />
+        </p>
+
+        <p>
+          <label for="puhelin">Puhelinnumero</label><br />
+          <input
+            type="tel"
+            id="puhelin"
+            name="puhelin"
+            placeholder="040 123 4567"
+          />
+        </p>
+
+        <p>
+          <label for="verkkosivu">Verkkosivu</label><br />
+          <input
+            type="url"
+            id="verkkosivu"
+            name="verkkosivu"
+            placeholder="https://www.example.com"
+          />
+        </p>
+      </fieldset>
+
+      <!-- Yhteydenoton tiedot -->
+      <fieldset>
+        <legend>Yhteydenoton tiedot</legend>
+
+        <p>
+          <label for="aihe">Yhteydenoton aihe *</label><br />
+
+          <select id="aihe" name="aihe" required>
+            <option value="">-- Valitse aihe --</option>
+            <option value="yleinen">Yleinen kysymys</option>
+            <option value="opiskelu">Opiskelu</option>
+            <option value="tekninen">Tekninen ongelma</option>
+            <option value="palaute">Palaute</option>
+            <option value="muu">Muu asia</option>
+          </select>
+        </p>
+
+        <p>
+          <label for="otsikko">Viestin otsikko</label><br />
+
+          <input type="text" id="otsikko" name="otsikko" list="otsikot" />
+
+          <datalist id="otsikot">
+            <option value="Tarvitsen apua"></option>
+            <option value="Haluan lisätietoja"></option>
+            <option value="Palaute"></option>
+            <option value="Tekninen ongelma"></option>
+          </datalist>
+        </p>
+
+        <p>
+          <label for="viesti">Viesti *</label><br />
+
+          <textarea
+            id="viesti"
+            name="viesti"
+            rows="8"
+            cols="50"
+            placeholder="Kirjoita viestisi tähän..."
+            required
+          ></textarea>
+        </p>
+      </fieldset>
+
+      <!-- Yhteydenottotapa -->
+      <fieldset>
+        <legend>Miten haluat, että sinuun otetaan yhteyttä?</legend>
+
+        <input
+          type="radio"
+          id="yhteys-email"
+          name="yhteystapa"
+          value="sahkoposti"
+          checked
+        />
+
+        <label for="yhteys-email"> Sähköpostilla </label>
+
+        <br />
+
+        <input
+          type="radio"
+          id="yhteys-puhelin"
+          name="yhteystapa"
+          value="puhelin"
+        />
+
+        <label for="yhteys-puhelin"> Puhelimella </label>
+
+        <br />
+
+        <input type="radio" id="yhteys-teams" name="yhteystapa" value="teams" />
+
+        <label for="yhteys-teams"> Teamsissä </label>
+      </fieldset>
+
+      <!-- Ajankohta -->
+      <fieldset>
+        <legend>Sopiva yhteydenottoaika</legend>
+
+        <p>
+          <label for="paiva">Päivämäärä</label><br />
+          <input type="date" id="paiva" name="paiva" />
+        </p>
+
+        <p>
+          <label for="aika">Kellonaika</label><br />
+          <input type="time" id="aika" name="aika" />
+        </p>
+
+        <p>
+          <label for="kuukausi">Sopiva kuukausi</label><br />
+          <input type="month" id="kuukausi" name="kuukausi" />
+        </p>
+
+        <p>
+          <label for="viikko">Sopiva viikko</label><br />
+          <input type="week" id="viikko" name="viikko" />
+        </p>
+      </fieldset>
+
+      <!-- Lisätiedot -->
+      <fieldset>
+        <legend>Lisätiedot</legend>
+
+        <p>
+          <label for="maara"> Kuinka nopeasti tarvitset vastauksen? </label>
+          <br />
+
+          <input
+            type="range"
+            id="maara"
+            name="kiireellisyys"
+            min="1"
+            max="10"
+            value="5"
+          />
+
+          <br />
+
+          1 = Ei kiirettä | 10 = Erittäin kiireellinen
+        </p>
+
+        <p>
+          <label for="numero">
+            Kuinka monta kertaa olet ollut meihin yhteydessä?
+          </label>
+          <br />
+
+          <input
+            type="number"
+            id="numero"
+            name="yhteydenotot"
+            min="0"
+            max="100"
+            value="0"
+          />
+        </p>
+
+        <p>
+          <label for="vari"> Valitse haluamasi teemaväri </label>
+          <br />
+
+          <input type="color" id="vari" name="vari" value="#663399" />
+        </p>
+
+        <p>
+          <label for="tiedosto"> Liitä tiedosto </label>
+          <br />
+
+          <input type="file" id="tiedosto" name="tiedosto" />
+        </p>
+      </fieldset>
+
+      <!-- Kiinnostuksen kohteet -->
+      <fieldset>
+        <legend>Mistä aiheista olet kiinnostunut?</legend>
+
+        <input type="checkbox" id="html" name="kiinnostus" value="html" />
+
+        <label for="html">HTML</label>
+
+        <br />
+
+        <input type="checkbox" id="css" name="kiinnostus" value="css" />
+
+        <label for="css">CSS</label>
+
+        <br />
+
+        <input
+          type="checkbox"
+          id="javascript"
+          name="kiinnostus"
+          value="javascript"
+        />
+
+        <label for="javascript">JavaScript</label>
+
+        <br />
+
+        <input type="checkbox" id="react" name="kiinnostus" value="react" />
+
+        <label for="react">React</label>
+      </fieldset>
+
+      <!-- Suostumukset -->
+      <fieldset>
+        <legend>Suostumukset</legend>
+
+        <p>
+          <input type="checkbox" id="ehdot" name="ehdot" required />
+
+          <label for="ehdot"> Hyväksyn tietojeni käsittelyn * </label>
+        </p>
+
+        <p>
+          <input type="checkbox" id="uutiskirje" name="uutiskirje" />
+
+          <label for="uutiskirje"> Haluan tilata uutiskirjeen </label>
+        </p>
+      </fieldset>
+
+      <!-- Piilotettu tieto -->
+      <input type="hidden" name="lomake" value="yhteydenottolomake" />
+
+      <!-- Painikkeet -->
+      <p>
+        <input type="submit" value="Lähetä viesti" />
+
+        <input type="reset" value="Tyhjennä lomake" />
+
+        <button type="button">Lisätietoja</button>
+      </p>
+    </form>
+  </body>
+</html>
